@@ -1,8 +1,4 @@
-export const categories: Readonly<Array<string>> = [
-  "Work",
-  "Personal",
-  "School",
-];
+export const categories = ["Work", "Personal", "School"] as const;
 
 type Category = (typeof categories)[number];
 
