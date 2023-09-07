@@ -1,10 +1,10 @@
 import Category from "./category";
 
-interface Task {
+export interface Task {
   id: number;
   title: string;
   dueDate: Date;
   category: Category;
 }
 
-export default Task;
+export type InitialTask = Omit<Task, "id">;
