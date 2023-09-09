@@ -5,6 +5,7 @@ import TaskForm from "./components/TaskForm";
 import useTasks from "./hooks/useTasks";
 import Button from "./components/Button";
 import { InitialTask } from "./models/task";
+import TaskList from "./components/TaskList";
 
 const App: FC = () => {
   const { tasks, addTask, removeTask } = useTasks();
@@ -31,7 +32,16 @@ const App: FC = () => {
           </div>
         </Modal>
       </header>
-      <main></main>
+      <main className="mt-4">
+        {tasks.length === 0 ? (
+          <div className="w-full mt-24 text-center">
+            <p className="text-6xl">🤷</p>
+            <p>No task yet</p>
+          </div>
+        ) : (
+          <TaskList tasks={tasks} removeTask={removeTask} />
+        )}
+      </main>
     </div>
   );
 };
