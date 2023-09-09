@@ -32,3 +32,7 @@ Build production code to `./dist`:
 ```sh
 yarn build
 ```
+
+## LICENSE
+
+This project is [MIT licensed](./LICENSE).
