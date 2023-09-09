@@ -1,12 +1,4 @@
-form > label {
-  @apply block mb-4;
-}
-
-form > label > span {
-  @apply block;
-}
-
-form > label > input,
+input,
 select {
-  @apply bg-neutral-600 rounded p-1 w-full p-2 h-8 after:p-2;
+  @apply bg-neutral-700 rounded w-full !p-1;
 }
