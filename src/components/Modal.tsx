@@ -38,7 +38,7 @@ const Modal: FC<ModalProps> = ({ children, isOpen = false, close }) => {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-neutral-800 text-left shadow-xl transition-all p-4">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-neutral-900 text-left shadow-xl transition-all p-4">
                 {children}
               </Dialog.Panel>
             </Transition.Child>
