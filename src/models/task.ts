@@ -3,7 +3,7 @@ import Category from "./category";
 export interface Task {
   id: number;
   title: string;
-  dueDate: Date;
+  dueDate: number;
   category: Category;
 }
 

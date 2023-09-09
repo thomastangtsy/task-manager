@@ -50,8 +50,12 @@ const TaskForm: FC<TaskFormProps> = ({ addTask }) => {
     resolver: zodResolver(taskFormSchema),
   });
 
-  const onSubmit = handleSubmit((data) => {
-    addTask(data);
+  const onSubmit = handleSubmit(({ title, dueDate, category }) => {
+    addTask({
+      title,
+      dueDate: dueDate.getTime(),
+      category,
+    });
   });
 
   return (

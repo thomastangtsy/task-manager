@@ -1,12 +1,13 @@
-import { useState } from "react";
 import { InitialTask, Task } from "../models/task";
+import useLocalStorage from "./useLocalStorage";
 
 const useTasks = (initTasks?: Array<Task>) => {
   const generateTask = (task: InitialTask): Task => {
     return { ...task, id: Date.now() };
   };
 
-  const [tasks, setTasks] = useState<Array<Task>>(
+  const [tasks, setTasks] = useLocalStorage<Array<Task>>(
+    "task",
     initTasks?.map((t) => generateTask(t)) ?? [],
   );
 
@@ -14,7 +15,7 @@ const useTasks = (initTasks?: Array<Task>) => {
     const newTask = generateTask(task);
     setTasks((prev) => {
       const newTasks = prev.concat([generateTask(task)]);
-      newTasks.sort((a, b) => a.dueDate.getTime() - b.dueDate.getTime());
+      newTasks.sort((a, b) => a.dueDate - b.dueDate);
       return newTasks;
     });
     return newTask;

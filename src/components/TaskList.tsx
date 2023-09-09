@@ -33,7 +33,7 @@ const TaskList: FC<TaskListProps> = ({ removeTask, tasks }) => {
               {task.title}
             </td>
             <td className="py-2 px-4 w-1 whitespace-nowrap text-center">
-              {task.dueDate.toLocaleDateString()}
+              {new Date(task.dueDate).toLocaleDateString()}
             </td>
             <td className="py-2 w-1 whitespace-no-wrap">
               <Button
